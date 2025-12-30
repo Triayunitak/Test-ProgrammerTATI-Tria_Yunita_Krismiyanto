@@ -13,4 +13,20 @@ $n dengan ketentuan
 
 Setiap soal memiliki folder dan README masing-masing.
 
+## Task
+Struktur Pegawai
 
+Pegawai 1 – Kepala Dinas
+ ├── Pegawai 2 – Kepala Bidang 1
+ │    └── Pegawai 4 – Staff
+ └── Pegawai 3 – Kepala Bidang 2
+      └── Pegawai 5 – Staff
+
+
+composer create-project laravel/laravel soal-1-log-harian-web
+cd soal-1-log-harian-web
+composer require laravel/ui
+php artisan ui tailwind --auth
+npm install
+npm run build
+php artisan config:clear
