@@ -30,3 +30,4 @@ DELETE /api/provinsi/{id} => menghapus provinsi tertentu.
 a. Thunder Client
 b. REST Client
 c. Postman (ini paling awam)
+- hasil ada di folder docs_penting menggunakan postman web untuk testing siklus CRUD
