@@ -4,7 +4,7 @@ Tria Yunita Krismiyanto, penggunaan framework dengan dasar laravel. Bismillah lu
 Repository ini berisi hasil pengerjaan TUGAS INTERVIEW Programmer (Intern).
 
 ## Daftar Soal
-- Soal 1: Sistem Log Harian Pegawai (Laravel + React)
+- Soal 1: Sistem Log Harian Pegawai (Laravel + Blade & Tailwind)
 - Soal 2: Buatlah REST API untuk melakukan operasi CRUD terhadap data provinsi di Indonesia
 - Soal 3: Buatlah fungsi predikat_kinerja($hasil_kerja, $perilaku), yang akan menampilkan output
 sesuai matriks dibawah ini
