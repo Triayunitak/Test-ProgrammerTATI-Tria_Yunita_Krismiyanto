@@ -104,3 +104,5 @@ php artisan ui tailwind --auth
 npm install
 npm run build
 php artisan config:clear
+php artisan make:migration create_custom_schema
+php artisan make:model DailyLog

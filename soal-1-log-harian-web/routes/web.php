@@ -1,7 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AuthController::class, 'showLogin'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Dashboard sementara (nanti kita isi chart)
+Route::get('/dashboard', function () {
+    return 'Berhasil Login! Ini Dashboard.';
+})->middleware('auth')->name('dashboard');
