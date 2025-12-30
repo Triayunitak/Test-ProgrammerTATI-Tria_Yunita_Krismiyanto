@@ -19,13 +19,18 @@ class DailyLog extends Model
         'verified_at' => 'datetime',
     ];
 
-    // Relasi ke User create
-    public function user() {
-        return $this->belongsTo(User::class, 'user_id');
+    // === RELASI (Hanya boleh ada 1 untuk setiap nama fungsi) ===
+
+    // 1. Relasi ke User (Pembuat Log)
+    public function user()
+    {
+        // Parameter: (Model Tujuan, Foreign Key di sini, Primary Key di sana)
+        return $this->belongsTo(User::class, 'user_id', 'id_user');
     }
 
-    // Relasi ke User verifikator
-    public function verifier() {
-        return $this->belongsTo(User::class, 'verified_by');
+    // 2. Relasi ke Verifikator (Atasan yang memverifikasi)
+    public function verifier()
+    {
+        return $this->belongsTo(User::class, 'verified_by', 'id_user');
     }
 }
