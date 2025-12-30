@@ -15,9 +15,7 @@
     <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 mx-4">
         
         <div class="flex justify-center mb-6">
-            <div class="bg-blue-600 rounded-tr-3xl rounded-bl-3xl w-12 h-12 flex items-center justify-center transform rotate-45">
-                <div class="bg-white w-4 h-4 rounded-full"></div>
-            </div>
+            <img src="{{ asset('LOGO ONLY.png') }}" alt="Logo App" class="w-24 h-auto object-contain">
         </div>
 
         <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">Login</h2>
@@ -44,14 +42,14 @@
             <div class="mb-4">
                 <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
                 <input type="email" name="email" id="email" 
-                    class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-gray-800 placeholder-gray-400"
+                    class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#5B3AFF] focus:border-[#5B3AFF] outline-none transition text-gray-800 placeholder-gray-400"
                     placeholder="ex. kabid1@example.com" required value="{{ old('email') }}">
             </div>
 
             <div class="mb-8 relative">
                 <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
                 <input type="password" name="password" id="password" 
-                    class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-gray-800 placeholder-gray-400"
+                    class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#5B3AFF] focus:border-[#5B3AFF] outline-none transition text-gray-800 placeholder-gray-400"
                     placeholder="ex. password" required>
                 
                 <button type="button" onclick="togglePassword()" class="absolute right-3 top-9 text-gray-400 hover:text-gray-600">
@@ -62,10 +60,14 @@
                 </button>
             </div>
 
-            <button type="submit" class="w-full bg-[#6366F1] hover:bg-[#4F46E5] text-white font-semibold py-3 rounded-lg shadow-md transition duration-200">
+            <button type="submit" class="w-full bg-[#5B3AFF] hover:opacity-90 text-white font-semibold py-3 rounded-lg shadow-md transition duration-200">
                 Login
             </button>
         </form>
+
+        <div class="mt-6 text-center text-xs text-gray-400">
+            &copy; 2025 Daily Log System
+        </div>
 
     </div>
 
