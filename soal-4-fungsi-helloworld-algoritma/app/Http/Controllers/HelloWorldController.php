@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HelloWorldController extends Controller
+class HelloWorldController extends Controller   
 {
     // main function
     public function index(Request $request)
@@ -21,12 +21,31 @@ class HelloWorldController extends Controller
         $hasil = $this->helloworld($n);
 
         // 3. return json respons
-        return response()->json([
-            'input_n' => $n,
-            'hasil_deret' => $hasil // isi array dr fungsi helloworld
-        ]);
+        return response()->json($hasil);
     }
 
+    // Diakses via: /api/helloworld-list?n=5
+    public function list(Request $request)
+    {
+        $target = $request->input('n');
+        if (!$target) return response()->json(['message' => 'Isi n dulu'], 400);
+
+        $laporan = [];
+
+        // Looping dari 1 sampai n untuk membuat laporan per baris
+        for ($i = 1; $i <= $target; $i++) {
+            $array_hasil = $this->helloworld($i);
+            
+            // Gabungkan array jadi string pakai spasi
+            $string_hasil = implode(' ', $array_hasil);
+            
+            // Format output sesuai permintaan
+            $laporan[] = "helloworld($i) => $string_hasil";
+        }
+
+        return response()->json($laporan);
+    }
+    
     // algoritma helloworld
     private function helloworld($n)
     {

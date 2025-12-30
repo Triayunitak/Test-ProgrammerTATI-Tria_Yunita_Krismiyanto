@@ -8,19 +8,30 @@ shortcut : composer create-project laravel/laravel soal-4-fungsi-helloworld-algo
 
 tes :
 http://127.0.0.1:8000/api/helloworld?n=1
-output : {"input_n":"1","hasil_deret":[1]}
+output : [1]
 
 http://127.0.0.1:8000/api/helloworld?n=2
-output : {"input_n":"2","hasil_deret":[1,2]}
+output : [1,2]
 
 http://127.0.0.1:8000/api/helloworld?n=3
-output : {"input_n":"3","hasil_deret":[1,2,3]}
+output : [1,2,3]
 
 http://127.0.0.1:8000/api/helloworld?n=4
-output : {"input_n":"4","hasil_deret":[1,2,3,"hello"]}
+output : [1,2,3,"hello"]
 
 http://127.0.0.1:8000/api/helloworld?n=5
-output : {"input_n":"5","hasil_deret":[1,2,3,"hello","world"]}
+output : [1,2,3,"hello","world"]
 
 http://127.0.0.1:8000/api/helloworld?n=6
-output : {"input_n":"6","hasil_deret":[1,2,3,"hello","world",6]}
+output : [1,2,3,"hello","world",6]
+
+http://127.0.0.1:8000/api/helloworld-list?n=6
+output:
+[
+"helloworld(1) => 1",
+"helloworld(2) => 1 2",
+"helloworld(3) => 1 2 3",
+"helloworld(4) => 1 2 3 hello",
+"helloworld(5) => 1 2 3 hello world",
+"helloworld(6) => 1 2 3 hello world 6"
+]
