@@ -93,6 +93,27 @@ php artisan make:migration create_custom_schema
 php artisan make:model DailyLog
 php artisan serve
 
+## User
+Kepala Dinas
+kadis@example.com
+password
+
+Kepala Bidang 1
+kabid1@example.com
+password
+
+Kepala Bidang 2
+kabid2@example.com
+password
+
+Staff 1
+staff1@example.com
+password
+
+Staff 2
+staff2@example.com
+password
+
 ## Warna
 primary = #5B3AFF
 secondary = #E6E1FF
