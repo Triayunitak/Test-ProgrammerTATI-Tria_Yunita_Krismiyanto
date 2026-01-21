@@ -140,8 +140,23 @@
                         <div class="flex items-center justify-center h-64"><canvas id="pieChart"></canvas></div>
                     </div>
                     <div class="bg-white border border-indigo-50 rounded-2xl p-6 shadow-sm">
-                        <h2 class="text-lg font-bold mb-4 text-black">Notes</h2>
-                        <div class="bg-indigo-50 rounded-xl p-4 text-gray-500 text-sm">Tidak ada catatan reject saat ini.</div>
+                        <h2 class="text-lg font-bold mb-4 text-black">Rejection Notes</h2>
+                        @if($rejectedLogs->isEmpty())
+                            <div class="bg-indigo-50 rounded-xl p-4 text-gray-500 text-sm">Tidak ada catatan reject saat ini.</div>
+                        @else
+                            <div class="space-y-3 max-h-48 overflow-y-auto">
+                                @foreach($rejectedLogs as $log)
+                                    <div class="bg-red-50 border border-red-200 rounded-lg p-3">
+                                        <div class="flex justify-between items-start gap-2 mb-1">
+                                            <p class="text-xs font-semibold text-red-700">{{ $log->log_date->format('d M Y') }}</p>
+                                            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800">Rejected</span>
+                                        </div>
+                                        <p class="text-xs text-gray-700 mb-2"><span class="font-medium">Activity:</span> {{ Str::limit($log->activity_summary, 80) }}</p>
+                                        <p class="text-xs text-red-600 italic border-l-2 border-red-300 pl-2"><span class="font-medium">Feedback:</span> {{ $log->verification_note }}</p>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endif
                     </div>
                 </div>
                 <div class="space-y-6">
